@@ -6,10 +6,13 @@ class radix {
     // A utility function to get maximum value in arr[]
     static int getMax(ArrayList<Integer> arr, int n)
     {
+        int comparisonCount = 0;
         int mx = arr.get(0);
-        for (int i = 1; i < n; i++)
+        for (int i = 1; i < n; i++) {
+            comparisonCount++; // Count this comparison
             if (arr.get(i) > mx)
                 mx = arr.get(i);
+        }
         return mx;
     }
 
@@ -45,16 +48,25 @@ class radix {
 
     // The main function to that sorts arr[] of
     // size n using Part_1.radix Sort
-    static void radixsort(ArrayList<Integer> arr, int n)
+    // Returns the total number of comparisons
+    static int radixsort(ArrayList<Integer> arr, int n)
     {
+        int totalComparisons = 0;
+
         // Find the maximum number to know number of digits
         int m = getMax(arr, n);
+        totalComparisons += n - 1; // Add comparisons from getMax
 
         // Do counting sort for every digit. Note that
         // instead of passing digit number, exp is passed.
         // exp is 10^i where i is current digit number
-        for (int exp = 1; m / exp > 0; exp *= 10)
+        for (int exp = 1; m / exp > 0; exp *= 10) {
             countSort(arr, n, exp);
+            // Radix sort doesn't do comparisons in the traditional sense
+            // The comparisons happen in getMax only
+        }
+
+        return totalComparisons;
     }
 
     // A utility function to print an array

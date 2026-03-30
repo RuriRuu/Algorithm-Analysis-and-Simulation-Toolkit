@@ -1,6 +1,8 @@
 package Part_1;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 class P1_Func {
 
@@ -47,6 +49,7 @@ class P1_Func {
     }
 
     public static void SortingAlgos(ArrayList<Integer> Input){
+        Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> unsortedSet = Input;
 
         selection sel = new selection();
@@ -54,17 +57,53 @@ class P1_Func {
         radix rad = new radix();
 
         System.out.println("\nTest Results");
-        System.out.println("Sample Size: " + unsortedSet.size());
+        System.out.println("Sample Size: " + unsortedSet.size() + "\n");
+
+        //selectionsort
+        ArrayList<Integer> selectionCopy = new ArrayList<>(Input);
         double stime = measureTime(() -> sel.selectionSort(new ArrayList<>(Input)));
+        double selectionComparisons = selection.selectionSort(selectionCopy);
         printSortingTime("Selection Sort", stime);
+        System.out.println("Comparisons: " + selectionComparisons + "\n");
 
         //mergesort
+        ArrayList<Integer> mergeCopy = new ArrayList<>(Input);
         double mtime = measureTime(() -> mer.mergeSort(new ArrayList<>(Input)));
+        int mergeComparisons = merge.mergeSort(mergeCopy);
         printSortingTime("Merge Sort", mtime);
+        System.out.println("Comparisons: " + mergeComparisons + "\n");
 
         //radixsort
+        ArrayList<Integer> radixCopy = new ArrayList<>(Input);
         double rtime = measureTime(() -> rad.radixsort(new ArrayList<>(Input),Input.size()));
+        int radixComparisons = radix.radixsort(radixCopy, radixCopy.size());
         printSortingTime("Radix Sort", rtime);
+        System.out.println("Comparisons: " + radixComparisons);
+
+        //program loop check
+        while (true) {
+            String loopinput = null;
+            String loopChoice = null;
+
+            System.out.print("\nPrint the sorted Set? Y/N: ");
+
+            try {
+                loopinput = scanner.next();
+                scanner.nextLine();
+            }catch (InputMismatchException e){
+                System.out.println("Input type invalid!");
+            }
+
+            loopChoice = loopinput.toUpperCase();
+            if (loopChoice.equals("Y")){
+                System.out.println(radixCopy);
+                return;
+            } else if (loopChoice.equals("N")) {
+                return;
+            } else {
+                System.out.println("unidentified response");
+            }
+        }
     }
 }
 

@@ -4,8 +4,10 @@ import java.util.*;
 
 class selection {
 
-    static void selectionSort(ArrayList<Integer> arr) {
+    static double selectionSort(ArrayList<Integer> arr) {
+        double comparisonCount = 0;
         int n = arr.size();
+
         for (int i = 0; i < n - 1; i++) {
 
             // Assume the current position holds
@@ -15,6 +17,7 @@ class selection {
             // Iterate through the unsorted portion
             // to find the actual minimum
             for (int j = i + 1; j < n; j++) {
+                comparisonCount++; // Count this comparison
                 if (arr.get(j) < arr.get(min_idx)) {
 
                     // Update min_idx if a smaller element
@@ -29,6 +32,8 @@ class selection {
             arr.set(i, arr.get(min_idx));
             arr.set(min_idx, temp);
         }
+
+        return comparisonCount;
     }
 
     static void printArray(ArrayList<Integer> arr) {
