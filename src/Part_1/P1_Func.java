@@ -7,6 +7,7 @@ import java.util.Scanner;
 class P1_Func {
 
 
+    //function for randomized set size
     public static ArrayList<Integer> randomSet() {
         ArrayList<Integer> set= new ArrayList<>();
 
@@ -22,6 +23,7 @@ class P1_Func {
         return set;
     }
 
+    //function for user inputted  set size
     public static ArrayList<Integer> inputSet(int size) {
         ArrayList<Integer> set= new ArrayList<>();
 
@@ -37,6 +39,7 @@ class P1_Func {
         return set;
     }
 
+    //measures how long algorithm took
     public static double measureTime(Runnable sortingMethod){
         long startTime = System.currentTimeMillis();
         sortingMethod.run();
@@ -48,6 +51,7 @@ class P1_Func {
         System.out.println(algorithmName + " took: " + time + "ms");
     }
 
+    //prints algorithm statistics
     public static void SortingAlgos(ArrayList<Integer> Input){
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> unsortedSet = Input;
@@ -80,7 +84,7 @@ class P1_Func {
         printSortingTime("Radix Sort", rtime);
         System.out.println("Comparisons: " + radixComparisons);
 
-        //program loop check
+        //print sorted set check
         while (true) {
             String loopinput = null;
             String loopChoice = null;
