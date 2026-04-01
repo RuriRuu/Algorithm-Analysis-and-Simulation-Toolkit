@@ -2,7 +2,7 @@ package Part_1;
 
 import java.util.*;
 
-class merge {
+class merge_sorting_module {
 
     // Merges two subarrays of arr[].
     // First subarray is arr[l..m]

@@ -2,7 +2,7 @@ package Part_1;
 
 import java.util.*;
 
-class selection {
+class selection_sorting_module {
 
     static double selectionSort(ArrayList<Integer> arr) {
         double comparisonCount = 0;

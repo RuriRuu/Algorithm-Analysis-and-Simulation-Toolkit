@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-class P1_Func {
+class Part1_Functions {
 
 
     //function for randomized set size
@@ -56,9 +56,9 @@ class P1_Func {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> unsortedSet = Input;
 
-        selection sel = new selection();
-        merge mer = new merge();
-        radix rad = new radix();
+        selection_sorting_module sel = new selection_sorting_module();
+        merge_sorting_module mer = new merge_sorting_module();
+        radix_sorting_module rad = new radix_sorting_module();
 
         System.out.println("\nTest Results");
         System.out.println("Sample Size: " + unsortedSet.size() + "\n");
@@ -66,21 +66,21 @@ class P1_Func {
         //selectionsort
         ArrayList<Integer> selectionCopy = new ArrayList<>(Input);
         double stime = measureTime(() -> sel.selectionSort(new ArrayList<>(Input)));
-        double selectionComparisons = selection.selectionSort(selectionCopy);
+        double selectionComparisons = selection_sorting_module.selectionSort(selectionCopy);
         printSortingTime("Selection Sort", stime);
         System.out.println("Comparisons: " + selectionComparisons + "\n");
 
         //mergesort
         ArrayList<Integer> mergeCopy = new ArrayList<>(Input);
         double mtime = measureTime(() -> mer.mergeSort(new ArrayList<>(Input)));
-        int mergeComparisons = merge.mergeSort(mergeCopy);
+        int mergeComparisons = merge_sorting_module.mergeSort(mergeCopy);
         printSortingTime("Merge Sort", mtime);
         System.out.println("Comparisons: " + mergeComparisons + "\n");
 
         //radixsort
         ArrayList<Integer> radixCopy = new ArrayList<>(Input);
         double rtime = measureTime(() -> rad.radixsort(new ArrayList<>(Input),Input.size()));
-        int radixComparisons = radix.radixsort(radixCopy, radixCopy.size());
+        int radixComparisons = radix_sorting_module.radixsort(radixCopy, radixCopy.size());
         printSortingTime("Radix Sort", rtime);
         System.out.println("Comparisons: " + radixComparisons);
 

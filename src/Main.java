@@ -1,9 +1,10 @@
-import Part_1.P1_Main;
+import Part_1.Part1_Main_Module;
 
 public class Main {
     public static void main(String[] args) {
-        P1_Main main = new P1_Main();
+        Part1_Main_Module main = new Part1_Main_Module();
 
         main.Menu();
     }
 }
+

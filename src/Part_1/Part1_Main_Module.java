@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class P1_Main {
+public class Part1_Main_Module {
 
 
     public void Menu (){
-        P1_Func func = new P1_Func();
+        Part1_Functions func = new Part1_Functions();
         Scanner scanner = new Scanner (System.in);
 
         System.out.println("Welcome to Sorting Algorithm Comparator\n");

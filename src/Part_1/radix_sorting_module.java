@@ -1,7 +1,7 @@
 package Part_1;// Part_1.radix sort Java implementation with ArrayList
 import java.util.*;
 
-class radix {
+class radix_sorting_module {
 
     // A utility function to get maximum value in arr[]
     static int getMax(ArrayList<Integer> arr, int n)
