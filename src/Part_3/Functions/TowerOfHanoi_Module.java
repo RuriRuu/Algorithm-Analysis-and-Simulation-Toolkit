@@ -1,4 +1,4 @@
-package Recursion__Module.Functions;
+package Part_3.Functions;
 
 public class TowerOfHanoi_Module {
     public static void towerOfHanoi(int n, char from, char to, char aux) {

@@ -1,4 +1,4 @@
-package Recursion__Module.Functions;
+package Part_3.Functions;
 
 public class Factorial_Module {
     public static int factorial(int n) {

@@ -1,4 +1,4 @@
-package Recursion__Module.Functions;
+package Part_3.Functions;
 
 public class Fibonacci_Module {
     public static int fibonacci(int n) {

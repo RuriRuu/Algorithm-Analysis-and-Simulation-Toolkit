@@ -1,24 +1,24 @@
-package Recursion__Module;
+package Part_3;
 
 import java.util.Scanner;
 
-import static Recursion__Module.Functions.Factorial_Module.factorial;
-import static Recursion__Module.Functions.Fibonacci_Module.fibonacci;
-import static Recursion__Module.Functions.TowerOfHanoi_Module.towerOfHanoi;
+import static Part_3.Functions.Factorial_Module.factorial;
+import static Part_3.Functions.Fibonacci_Module.fibonacci;
+import static Part_3.Functions.TowerOfHanoi_Module.towerOfHanoi;
 
-public class RecursionShowcase_Module {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+public class Part3_Functions {
+    Scanner scanner = new Scanner(System.in);
 
-        System.out.println("===== Recursion Showcase =====");
-
+    public void Factorial(){
         while (true)
         {
+            System.out.println("\n===== Factorial =====");
             try{
-                System.out.println("===== Factorial =====");
                 System.out.print("Enter Value for Factorial: ");
-                int factorialInput = scan.nextInt();
+
+                int factorialInput = scanner.nextInt();
                 int factResult = factorial(factorialInput);
+
                 System.out.println("Result = " + factResult);
                 System.out.println("====================");
                 break;
@@ -26,14 +26,18 @@ public class RecursionShowcase_Module {
                 System.out.println("Invalid Input, Please try again");
             }
         }
+    }
 
+    public void Fibonacci(){
         while (true)
         {
+            System.out.println("\n===== Fibonacci =====");
             try{
-                System.out.println("===== Fibonacci =====");
                 System.out.print("Enter Value for Fibonacci: ");
-                int fibInput = scan.nextInt();
+
+                int fibInput = scanner.nextInt();
                 int fibResult = fibonacci(fibInput);
+
                 System.out.println("Result = " + fibResult);
                 System.out.println("====================");
                 break;
@@ -41,12 +45,16 @@ public class RecursionShowcase_Module {
                 System.out.println("Invalid Input, Please try again");
             }
         }
+    }
+
+    public void Hanoi(){
         while (true)
         {
+            System.out.println("\n===== Tower of Hanoi =====");
             try{
-                System.out.println("===== Tower of Hanoi =====");
+
                 System.out.print("Enter Amount of Disks: ");
-                int diskInput = scan.nextInt();
+                int diskInput = scanner.nextInt();
                 towerOfHanoi(diskInput, 'A', 'C', 'B');
                 System.out.println("====================");
                 break;
@@ -55,4 +63,6 @@ public class RecursionShowcase_Module {
             }
         }
     }
+
+
 }

@@ -1,10 +1,10 @@
-package Part_1;
+package Part_1.Algorithms;
 
 import java.util.*;
 
-class selection_sorting_module {
+public class selection_sorting_module {
 
-    static double selectionSort(ArrayList<Integer> arr) {
+    public static double selectionSort(ArrayList<Integer> arr) {
         double comparisonCount = 0;
         int n = arr.size();
 

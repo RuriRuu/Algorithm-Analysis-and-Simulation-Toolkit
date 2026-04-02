@@ -1,8 +1,8 @@
-package Part_1;
+package Part_1.Algorithms;
 
 import java.util.*;
 
-class merge_sorting_module {
+public class merge_sorting_module {
 
     // Merges two subarrays of arr[].
     // First subarray is arr[l..m]
@@ -72,7 +72,7 @@ class merge_sorting_module {
     }
 
     // Convenience method to sort the entire ArrayList
-    static int mergeSort(ArrayList<Integer> arr) {
+    public static int mergeSort(ArrayList<Integer> arr) {
         return mergeSort(arr, 0, arr.size() - 1);
     }
 

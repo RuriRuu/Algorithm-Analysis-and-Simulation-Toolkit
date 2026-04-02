@@ -1,22 +1,20 @@
-import Part_1.Part1_Main_Module;
-import Part_3.Part3_Functions;
-import Part_3.Part3_Main_Module;
+package Part_3;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-        Part1_Main_Module P1 = new Part1_Main_Module();
-        Part3_Main_Module P3 = new Part3_Main_Module();
+public class Part3_Main_Module {
+
+    public void Menu() {
+        Part3_Functions func = new Part3_Functions();
         Scanner scanner = new Scanner(System.in);
 
         while(true) {
             int choice = 0;
-            System.out.println("\n===== Algorithm-Analysis-and-Simulation-Toolkit =====");
-            System.out.println("1 | Sorting Algorithm Comparator");
-            System.out.println("2 | Kruskal's and Prim's Algorithm Simulator");
-            System.out.println("3 | Recursive Functions Simulator");
+            System.out.println("===== Recursion Showcase =====");
+            System.out.println("1 | Factorial Tree");
+            System.out.println("2 | Fibonacci Sequence");
+            System.out.println("3 | Tower of Hanoi ");
             System.out.println("4 | Exit Program \n");
 
             try{
@@ -29,16 +27,16 @@ public class Main {
 
             switch (choice){
                 case 1:
-                    P1.Menu();
+                    func.Factorial();
                     break;
                 case 2:
-                    //insert P2.Menu(); here
+                    func.Fibonacci();
                     break;
                 case 3:
-                    P3.Menu();
+                    func.Hanoi();
                     break;
                 case 4:
-                    System.out.println("Exiting Simulation Toolkit...");
+                    System.out.println("Exiting Recursion Showcase...");
                     return;
                 default:
                     System.out.println("Unidentified response");
@@ -46,4 +44,3 @@ public class Main {
         }
     }
 }
-

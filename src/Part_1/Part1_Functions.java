@@ -1,5 +1,9 @@
 package Part_1;
 
+import Part_1.Algorithms.merge_sorting_module;
+import Part_1.Algorithms.radix_sorting_module;
+import Part_1.Algorithms.selection_sorting_module;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
