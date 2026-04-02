@@ -1,11 +1,10 @@
 import Part_1.Part1_Main_Module;
-import Part_3.Part3_Functions;
 import Part_3.Part3_Main_Module;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main {
+public class Main_Program {
     public static void main(String[] args) {
         Part1_Main_Module P1 = new Part1_Main_Module();
         Part3_Main_Module P3 = new Part3_Main_Module();
