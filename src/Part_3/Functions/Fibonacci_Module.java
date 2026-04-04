@@ -2,18 +2,17 @@ package Part_3.Functions;
 
 public class Fibonacci_Module {
     public static int fibonacci(int n) {
-        System.out.println("fibonacci(" + n + ")");
-        if (n == 0) {
-            System.out.println(" -> 0 (base case)");
-            return 0;
-        } else if (n == 1) {
-            System.out.println(" -> 1 (base case)");
-            return 1;
-        } else {
-            System.out.println(" -> fibonacci(" + (n - 1) + ") + fibonacci(" + (n - 2) + ")");
-            int result = fibonacci(n - 1) + fibonacci(n - 2);
-            System.out.println("Return fibonacci(" + n + ") = " + result);
-            return result;
+
+        int n1 = 0, n2 = 1;
+
+        for(int i = 0; i < n; i++){
+            //prints fib in a more clear way
+            System.out.println(n1 + " ");
+
+            int n3 = n2 + n1;
+            n1 = n2;
+            n2 = n3;
         }
+        return n;
     }
 }

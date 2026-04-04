@@ -1,5 +1,6 @@
 package Part_3;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 import static Part_3.Functions.Factorial_Module.factorial;
@@ -17,7 +18,7 @@ public class Part3_Functions {
                 System.out.print("Enter Value for Factorial: ");
 
                 int factorialInput = scanner.nextInt();
-                int factResult = factorial(factorialInput);
+                BigInteger factResult = factorial(factorialInput);
 
                 System.out.println("Result = " + factResult);
                 System.out.println("====================");
@@ -52,14 +53,23 @@ public class Part3_Functions {
         {
             System.out.println("\n===== Tower of Hanoi =====");
             try{
+                int diskInput;
+                while (true){
+                    System.out.print("Enter Amount of Disks: ");
+                    diskInput = scanner.nextInt();
+                    if (diskInput <= 0 || diskInput > 20){
+                        System.out.println("Input Invalid, cannot have more than 20 or less than or equal to 0 disks.");
+                    } else {
+                        break;
+                    }
+                }
 
-                System.out.print("Enter Amount of Disks: ");
-                int diskInput = scanner.nextInt();
                 towerOfHanoi(diskInput, 'A', 'C', 'B');
                 System.out.println("====================");
                 break;
             } catch (Exception e) {
                 System.out.println("Invalid Input, Please try again");
+                scanner.nextLine();
             }
         }
     }
