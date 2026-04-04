@@ -15,7 +15,7 @@ public class Part3_Main_Module {
             System.out.println("1 | Factorial Tree");
             System.out.println("2 | Fibonacci Sequence");
             System.out.println("3 | Tower of Hanoi ");
-            System.out.println("4 | Exit Program \n");
+            System.out.println("4 | Return to main menu \n");
 
             try{
                 System.out.print("Input Choice: ");
@@ -36,7 +36,7 @@ public class Part3_Main_Module {
                     func.Hanoi();
                     break;
                 case 4:
-                    System.out.println("Exiting Recursion Showcase...");
+                    System.out.println("Returning to main menu...");
                     return;
                 default:
                     System.out.println("Unidentified response");

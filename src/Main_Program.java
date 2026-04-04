@@ -1,4 +1,5 @@
 import Part_1.Part1_Main_Module;
+import Part_2.Part2_Main_Module;
 import Part_3.Part3_Main_Module;
 
 import java.util.InputMismatchException;
@@ -7,6 +8,7 @@ import java.util.Scanner;
 public class Main_Program {
     public static void main(String[] args) {
         Part1_Main_Module P1 = new Part1_Main_Module();
+        Part2_Main_Module P2 = new Part2_Main_Module();
         Part3_Main_Module P3 = new Part3_Main_Module();
         Scanner scanner = new Scanner(System.in);
 
@@ -31,7 +33,7 @@ public class Main_Program {
                     P1.Menu();
                     break;
                 case 2:
-                    //insert P2.Menu(); here
+                    P2.Menu();
                     break;
                 case 3:
                     P3.Menu();

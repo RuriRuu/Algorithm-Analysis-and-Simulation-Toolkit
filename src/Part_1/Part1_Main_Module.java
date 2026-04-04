@@ -83,7 +83,7 @@ public class Part1_Main_Module {
                 if (loopChoice.equals("Y")){
                     break;
                 } else if (loopChoice.equals("N")) {
-                    System.out.println("Exiting Sorting Algorithm Comparator...");
+                    System.out.println("Returning to main menu...");
                     return;
                 } else {
                     System.out.println("unidentified response");
