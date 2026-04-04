@@ -1,9 +1,9 @@
 package Part_2;
 import java.util.Scanner;
-import Part_2.Algorithms.krurksals_algorithm;
+import Part_2.Algorithms.krusksals_algorithm;
 import Part_2.Algorithms.prims_algorithm;
 
-import static Part_2.Algorithms.krurksals_algorithm.displayGraph;
+import static Part_2.Algorithms.krusksals_algorithm.displayGraph;
 
 public class Part2_Functions {
 
@@ -67,7 +67,7 @@ public class Part2_Functions {
         }
         displayGraph(V, edges);
         System.out.println("=== Steps Taken ===");
-        System.out.println("\nTotal MST cost: " + krurksals_algorithm.KruksalsMST(V, edges));
+        System.out.println("\nTotal MST cost: " + krusksals_algorithm.KruksalsMST(V, edges));
     }
 
     // main function for running prims

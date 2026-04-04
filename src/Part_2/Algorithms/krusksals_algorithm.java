@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class krurksals_algorithm {
+public class krusksals_algorithm {
 
     public static int KruksalsMST(int vertices, int[][] edges){
         // weighted sorting
