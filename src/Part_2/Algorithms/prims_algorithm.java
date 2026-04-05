@@ -22,7 +22,24 @@ public class prims_algorithm {
     }
 
     public void primMST(int graph[][]) {
+        if (graph == null) {
+            System.err.println("Error: Graph cannot be null");
+            return;
+        }
+
         int V = graph.length;
+
+        if (V == 0) {
+            System.err.println("Error: Graph has no vertices");
+            return;
+        }
+
+        for (int i = 0; i < V; i++) {
+            if (graph[i].length != V) {
+                System.err.println("Error: Graph matrix is not square at row " + i);
+                return;
+            }
+        }
 
         int parent[] = new int[V];
         int key[] = new int[V];
@@ -36,16 +53,39 @@ public class prims_algorithm {
         key[0] = 0;
         parent[0] = -1;
 
-        for (int count = 0; count < V - 1; count++) {
-            int u = minKey(key, mstSet);
-            mstSet[u] = true;
+        try {
+            for (int count = 0; count < V - 1; count++) {
+                int u = minKey(key, mstSet);
 
-            for (int v = 0; v < V; v++)
-                if (graph[u][v] != 0 && mstSet[v] == false
-                        && graph[u][v] < key[v]) {
-                    parent[v] = u;
-                    key[v] = graph[u][v];
+                if (u == -1) {
+                    System.err.println("Error: Graph is disconnected - cannot find minimum key vertex");
+                    return;
                 }
+
+                mstSet[u] = true;
+
+                for (int v = 0; v < V; v++) {
+                    if (graph[u][v] > 0 && mstSet[v] == false && graph[u][v] < key[v]) {
+                        parent[v] = u;
+                        key[v] = graph[u][v];
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error occurred during MST construction: " + e.getMessage());
+            return;
+        }
+
+        int connectedCount = 0;
+        for (int i = 1; i < V; i++) {
+            if (parent[i] != -1) {
+                connectedCount++;
+            }
+        }
+
+        if (connectedCount != V - 1) {
+            System.err.println("Warning: Graph is disconnected - MST not possible for all vertices");
+            System.err.println("Only " + connectedCount + " out of " + (V - 1) + " edges were added");
         }
 
         System.out.println("Starting Vertex: " + Arrays.toString(parent));

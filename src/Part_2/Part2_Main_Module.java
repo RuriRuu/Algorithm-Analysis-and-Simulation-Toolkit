@@ -26,7 +26,7 @@ public class Part2_Main_Module {
 
             switch (choice){
                 case 1:
-                    kruksals(scanner);
+                    krusksals(scanner);
                     break;
                 case 2:
                     prims(scanner);

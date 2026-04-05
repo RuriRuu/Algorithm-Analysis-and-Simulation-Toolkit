@@ -8,7 +8,7 @@ import static Part_2.Algorithms.krusksals_algorithm.displayGraph;
 public class Part2_Functions {
 
     //entire kruksals algorithm function
-    public static void kruksals(Scanner scan) {
+    public static void krusksals(Scanner scan) {
         int V = 0;
         while(true) {
             System.out.print("Enter number of vertices: ");
@@ -67,7 +67,7 @@ public class Part2_Functions {
         }
         displayGraph(V, edges);
         System.out.println("=== Steps Taken ===");
-        System.out.println("\nTotal MST cost: " + krusksals_algorithm.KruksalsMST(V, edges));
+        System.out.println("\nTotal MST cost: " + krusksals_algorithm.KrusksalsMST(V, edges));
     }
 
     // main function for running prims
